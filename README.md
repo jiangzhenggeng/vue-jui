@@ -1,6 +1,13 @@
-# home
+# install
 
-> A Vue.js project
+npm install --save vue-jui
+
+# use
+```js
+import Vue from 'vue'
+import VuejUI from 'vue-jui'
+Vue.use(VuejUI)
+```
 
 ## Build Setup
 
