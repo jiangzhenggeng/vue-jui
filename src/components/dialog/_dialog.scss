@@ -1,0 +1,41 @@
+@import "../../style/functions";
+
+.dialog__wrap {
+  .dialog__inner {
+    background: #fff;
+    border-radius: px2rem(10);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: px2rem(230);
+    height: px2rem(230);
+    transform: translateY(-50%) translateX(-50%);
+    overflow: hidden;
+
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: center;
+    //align-items: center;
+  }
+  .window__icon {
+    width: px2rem(60);
+    display: block;
+  }
+
+  .dialog__text {
+    color: #999;
+  }
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate__animation {
+  animation: rotate-animation 1000ms infinite linear;
+}
