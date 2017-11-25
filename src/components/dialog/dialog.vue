@@ -5,6 +5,7 @@
   @import "../../style/functions";
 
   .dialog__wrap {
+
     .dialog__inner {
       width: 80%;
       height: auto;
@@ -41,35 +42,34 @@
           background-color: #f7f7f7;
           color: #666;
         }
-        &:nth-child(2):after {
-          position: absolute;
-          content: '';
-          display: block;
-          height: 100%;
-          width: px2rem(1.5);
-          background-color: #ccc;
-          left: px2rem(-1.5/2);
-          top: 0;
+        &:nth-child(2) {
+          border-left: px2rem(1.5) solid #ccc;
         }
       }
+    }
+    .window__modal-zoom{
+      background: #fff;
+      border-radius: px2rem(10);
     }
   }
 </style>
 <template>
   <modal :modal="modal" :mask="mask" :visible="modal_show" class="dialog__wrap">
     <div class="dialog__inner">
-      <div class="confirm__body">
-        <slot></slot>
-        <slot name="content">
-          <div class="dialog__text" v-if="inner_text">{{ inner_text }}</div>
-        </slot>
-      </div>
-      <div class="confirm__btn-wrap">
-        <div v-if="inner_type=='confirm'" class="confirm__btn" @click="cancel">
-          <slot name="left-btn">取消</slot>
+      <div class="window__modal-zoom">
+        <div class="confirm__body">
+          <slot></slot>
+          <slot name="content">
+            <div class="dialog__text" v-if="inner_text">{{ inner_text }}</div>
+          </slot>
         </div>
-        <div class="confirm__btn" @click="ok">
-          <slot name="right-btn">确认</slot>
+        <div class="confirm__btn-wrap">
+          <div v-if="inner_type=='confirm'" class="confirm__btn" @click="cancel">
+            <slot name="left-btn">取消</slot>
+          </div>
+          <div class="confirm__btn" @click="ok">
+            <slot name="right-btn">确认</slot>
+          </div>
         </div>
       </div>
     </div>

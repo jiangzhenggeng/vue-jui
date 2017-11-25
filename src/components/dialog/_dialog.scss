@@ -2,20 +2,11 @@
 
 .dialog__wrap {
   .dialog__inner {
-    background: #fff;
-    border-radius: px2rem(10);
     position: absolute;
     top: 50%;
     left: 50%;
-    width: px2rem(230);
-    height: px2rem(230);
+    width: auto;
     transform: translateY(-50%) translateX(-50%);
-    overflow: hidden;
-
-    //display: flex;
-    //flex-direction: column;
-    //justify-content: center;
-    //align-items: center;
   }
   .window__icon {
     width: px2rem(60);
@@ -38,4 +29,33 @@
 
 .rotate__animation {
   animation: rotate-animation 1000ms infinite linear;
+}
+
+
+.window__modal-enter-active {
+  animation: window__modal-dialog-fadein .3s;
+  .window__modal-zoom {
+    animation: window__modal-dialog-zoom .3s;
+  }
+}
+
+@keyframes window__modal-dialog-fadein {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes window__modal-dialog-zoom {
+  0% {
+    transform: scale(0)
+  }
+  50% {
+    transform: scale(1.1)
+  }
+  100% {
+    transform: scale(1)
+  }
 }

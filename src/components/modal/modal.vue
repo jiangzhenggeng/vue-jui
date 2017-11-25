@@ -2,15 +2,6 @@
 
   @import "../../style/functions";
 
-  .window__modal-enter-active, .window__modal-leave-active {
-    transition: all .3s;
-  }
-
-  .window__modal-enter, .window__modal-leave-active {
-    opacity: 0;
-    transform: scale(1.5);
-  }
-
   .window__modal {
     position: fixed;
     z-index: 99999999;
@@ -23,10 +14,11 @@
       pointer-events: none;
     }
     &.mask {
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(37,38,45,.4);
     }
   }
 </style>
+
 <template>
   <transition name="window__modal">
     <div v-if="modal_show" class="window__modal" :class="{'no-event':!modal,'mask':modal_mask}">
