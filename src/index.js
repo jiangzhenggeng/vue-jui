@@ -1,7 +1,8 @@
 import {
   Modal,
   Dialog,
-  CreateApi
+  CreateApi,
+  EventProxy
 } from './module'
 
 function install (Vue) {
@@ -11,7 +12,8 @@ function install (Vue) {
   const components = [
     Modal,
     Dialog,
-    CreateApi
+    CreateApi,
+    EventProxy
   ]
   components.forEach((Component) => {
     Component.install(Vue)
