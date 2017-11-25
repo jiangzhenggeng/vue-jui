@@ -26,13 +26,13 @@ if (files) {
 var webpackConfig = merge(baseWebpackConfig, {
   entry: modules,
   module: {
-    rules: utils.styleLoaders({ sourceMap: config.build.productionSourceMap, extract: true })
+    rules: utils.styleLoaders({ sourceMap: false, extract: true })
   },
-  devtool: config.build.productionSourceMap ? '#source-map' : false,
+  devtool: false,
   output: {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('[name]/index.js'),
-    library: 'cube',
+    library: 'jui',
     libraryTarget: 'commonjs2'
   },
   plugins: [

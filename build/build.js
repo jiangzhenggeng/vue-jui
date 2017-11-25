@@ -44,13 +44,15 @@ buildPack(webpackConfig, function () {
   webpackConfig.plugins.splice(2, 1, new ExtractTextPlugin(utils.assetsPath('[name].min.css')), new OptimizeCSSPlugin({
     cssProcessorOptions: {
       safe: true
-    }
+    },
+    sourceMap: false,
   }))
   // add UglifyJsPlugin
   webpackConfig.plugins.splice(2, 0, new webpack.optimize.UglifyJsPlugin({
     compress: {
       warnings: false
-    }
+    },
+    sourceMap: false,
   }))
   buildPack(webpackConfig, function () {
     buildPack(webpackModulesConfig, function () {
@@ -59,13 +61,15 @@ buildPack(webpackConfig, function () {
       webpackModulesConfig.plugins.splice(2, 1, new ExtractTextPlugin(utils.assetsPath('[name]/[name].min.css')), new OptimizeCSSPlugin({
         cssProcessorOptions: {
           safe: true
-        }
+        },
+        sourceMap: false,
       }))
       // 增加 UglifyJsPlugin
       webpackModulesConfig.plugins.splice(2, 0, new webpack.optimize.UglifyJsPlugin({
         compress: {
           warnings: false
-        }
+        },
+        sourceMap: false,
       }))
       buildPack(webpackModulesConfig, null, 'building for compressed component files...')
     }, 'building for uncompressed component files...')

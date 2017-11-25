@@ -23,7 +23,7 @@
       pointer-events: none;
     }
     &.mask {
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.4);
     }
   }
 </style>

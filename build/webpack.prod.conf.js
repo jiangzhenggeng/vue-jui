@@ -18,15 +18,15 @@ var webpackConfig = merge(baseWebpackConfig, {
   },
   module: {
     rules: utils.styleLoaders({
-      sourceMap: config.build.productionSourceMap,
+      sourceMap: false,
       extract: true
     })
   },
-  devtool: config.build.productionSourceMap ? '#source-map' : false,
+  devtool: false,
   output: {
     path: config.build.assetsRoot,
     filename: utils.assetsPath('index.js'),
-    library: 'cube',
+    library: 'jui',
     libraryTarget: 'umd'
   },
   plugins: [
