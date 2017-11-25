@@ -1,6 +1,6 @@
 {
   "name": "vue-jui",
-  "version": "0.2.3",
+  "version": "0.3.4",
   "description": "vue-jui",
   "author": "JianZG <2992265870@qq.com>",
   "private": false,
@@ -12,6 +12,7 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run"
   },
   "dependencies": {
+    "jquery": "^3.2.1",
     "vue": "^2.5.2"
   },
   "devDependencies": {
